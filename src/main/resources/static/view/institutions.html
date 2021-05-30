@@ -71,7 +71,7 @@
 				</thead>
 				<tbody>
 
-					<tr ng-repeat="institution in institutions">
+					<tr ng-repeat="institution in institutions | orderBy:'nome'">
 						<td style="display: table-cell; vertical-align: middle"><span>{{institution.id}}</span></td>
 						<td style="display: table-cell; vertical-align: middle"><span>{{institution.login}}</span></td>
 						<td style="display: table-cell; vertical-align: middle"><span>{{institution.senha}}</span></td>

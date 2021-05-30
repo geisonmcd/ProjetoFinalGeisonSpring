@@ -8,7 +8,7 @@ angular.module('institutions').factory('api', [ '$http', function ($http) {
                 return $http.post(`/usuario/adicionar`, usuario)
             },
             put: function (idUsuario, usuario) {
-                return $http.put(`/usuario/${idUsuario}`, usuario);
+                return $http.put(`/usuario/alterar/${idUsuario}`, usuario);
             },
             delete: function (idUsuario) {
                 return $http.delete(`/usuario/${idUsuario}`)

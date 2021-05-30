@@ -10,7 +10,7 @@ angular.module('institutions').controller("institutionsController", ["$scope", "
     $scope.salvaUsuario = function () {
         if (!$scope.usuario) return;
         if ($scope.usuario.id) {
-            api.institutions.put($scope.institution.idInstitution, institution).then(function (response) {
+            api.institutions.put($scope.usuario.id, $scope.usuario).then(function (response) {
                 $route.reload();
             });
         } else {
@@ -21,18 +21,16 @@ angular.module('institutions').controller("institutionsController", ["$scope", "
     };
 
     $scope.deleteUser = function (user) {
-    console.log(user);
         api.institutions.delete(user.id).then(function (response) {
-        	console.log('excluiu com sucess');
             $route.reload();
         }, function (error){
         });
     };
 
     $scope.editInstitution = function (usuario) {
-    console.log(usuario)
         $scope.editMode = true;
         $scope.usuario = angular.copy(usuario);
+        $scope.usuario.dtNasc = new Date(usuario.dtNasc)
     }
 
     init();
