@@ -7,7 +7,8 @@ angular.module('institutions').controller("institutionsController", ["$scope", "
         $scope.usuario = {};
     };
     
-    $scope.salvaUsuario = function () {
+    $scope.salvaUsuario = function (form) {
+        if (form.$invalid)return;
         if (!$scope.usuario) return;
         if ($scope.usuario.id) {
             api.institutions.put($scope.usuario.id, $scope.usuario).then(function (response) {
