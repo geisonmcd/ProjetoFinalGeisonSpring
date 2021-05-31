@@ -1,4 +1,4 @@
-angular.module('institutions').controller("institutionsController", ["$scope", "$route", "institutions", "api",  function ($scope, $route, institutions, api){
+angular.module('institutions').controller("usersController", ["$scope", "$route", "institutions", "api",  function ($scope, $route, institutions, api){
     
     const init = function () {
         $scope.editMode = false;
