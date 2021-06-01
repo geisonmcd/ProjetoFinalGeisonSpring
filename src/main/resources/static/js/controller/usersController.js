@@ -1,9 +1,8 @@
-angular.module('institutions').controller("usersController", ["$scope", "$route", "institutions", "api",  function ($scope, $route, institutions, api){
+angular.module('users').controller("usersController", ["$scope", "$route", "users", "api",  function ($scope, $route, users, api){
     
     const init = function () {
         $scope.editMode = false;
-        console.log(institutions);
-        $scope.institutions = institutions.data;
+        $scope.users = users.data;
         $scope.usuario = {};
     };
     
@@ -11,24 +10,24 @@ angular.module('institutions').controller("usersController", ["$scope", "$route"
         if (form.$invalid)return;
         if (!$scope.usuario) return;
         if ($scope.usuario.id) {
-            api.institutions.put($scope.usuario.id, $scope.usuario).then(function (response) {
+            api.users.put($scope.usuario.id, $scope.usuario).then(function (response) {
                 $route.reload();
             });
         } else {
-            api.institutions.post($scope.usuario).then(function (response) {
+            api.users.post($scope.usuario).then(function (response) {
                 $route.reload();
             });
         }
     };
 
     $scope.deleteUser = function (user) {
-        api.institutions.delete(user.id).then(function (response) {
+        api.users.delete(user.id).then(function (response) {
             $route.reload();
         }, function (error){
         });
     };
 
-    $scope.editInstitution = function (usuario) {
+    $scope.editUser = function (usuario) {
         $scope.editMode = true;
         $scope.usuario = angular.copy(usuario);
         $scope.usuario.dtNasc = new Date(usuario.dtNasc)

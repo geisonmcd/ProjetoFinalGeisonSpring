@@ -73,22 +73,22 @@
 			</thead>
 			<tbody>
 
-				<tr ng-repeat="institution in institutions | orderBy:'nome'">
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.id}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.login}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.senha}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.nome}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.cpf}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.dtNasc |
+				<tr ng-repeat="user in users | orderBy:'nome'">
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.id}}</span></td>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.login}}</span></td>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.senha}}</span></td>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.nome}}</span></td>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.cpf}}</span></td>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.dtNasc |
 							date:'dd/MM/yyyy'}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.sexo}}</span></td>
-					<td style="display: table-cell; vertical-align: middle"><span>{{institution.estadoCivil}}</span>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.sexo}}</span></td>
+					<td style="display: table-cell; vertical-align: middle"><span>{{user.estadoCivil}}</span>
 					</td>
 					<td class="d-flex justify-content-around">
-						<button class="btn btn-primary" ng-click="editInstitution(institution)">
+						<button class="btn btn-primary" ng-click="editUser(user)">
 							<i class="fa fa-edit fa-lg"></i>
 						</button>
-						<button class="btn btn-danger" ng-click="deleteUser(institution)">
+						<button class="btn btn-danger" ng-click="deleteUser(user)">
 							<i class="fa fa-trash fa-lg"></i>
 						</button>
 					</td>
